@@ -1,0 +1,59 @@
+{
+    "easy": [
+        {
+            "title": "The first room",
+
+            "type": "default",
+
+            "monsters": {
+                "slime": 2
+            }
+        },
+
+        {
+            "title": "The second room",
+
+            "type": "default",
+            
+            "monsters": {
+                "slime": 4
+            }
+        },
+
+        {
+            "title": "The third room",
+
+            "type": "default",
+            
+            "monsters": {
+                "slime": 2,
+                "crow": 1
+            }
+        },
+
+        {
+            "title": "The fourth room",
+
+            "type": "default",
+            
+            "monsters": {
+                "slime": 3,
+                "crow": 3
+            }
+        },
+
+        {
+            "title": "The MINOTOR room",
+
+            "type": "boss",
+            
+            "monsters": {
+                "minotor": 1
+            }
+        }
+    ],
+
+    "normal": [],
+
+    "hard": []
+}

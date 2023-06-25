@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <base href=".">
+    <link rel="shortcut icon" href="#">
+    <link rel="preload" as="font" href="assets/font/manaspc.ttf" type="font/ttf" />
+
+    <!-- import phaser package -->
+    <script src="./node_modules/phaser/dist/phaser.js"></script>
+
+    <!-- ajust screen property -->
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(255, 255, 255);
+        }
+
+        canvas {
+            display: block;
+        }
+
+        @font-face {
+            font-family: pixelFont;
+            src: url('assets/font/manaspc.ttf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+    </style>
+    </head>
+<body>
+    <div style="font-family: pixelFont; position: absolute; left:-1000px; visibility:hidden;">.</div>
+
+    <!-- All module -->
+    <script src="./modules/math.js"></script>
+    <script src="./modules/random.js"></script>
+    <script src="./modules/cursor.js"></script>
+
+    <!-- All Object -->
+    <script src="./object/player.js"></script>
+    <script src="./object/monster.js"></script>
+
+    <!-- All Phaser Scenes -->
+    <script src="./scene/menu.js"></script>
+    <script src="./scene/credit.js"></script>
+    <script src="./scene/test.js"></script>
+    <script src="./scene/settings.js"></script>
+
+    <!-- Game -->
+    <script src="./scene/game/load.js"></script>
+    <script src="./scene/game/start.js"></script>
+
+
+    <!-- // Game config // -->
+    <script src="./config.js"></script>
+
+    <script>
+        let game = new Phaser.Game(config);
+
+
+        function resizeGame() {
+            var canvas = document.querySelector("canvas");
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+            var windowRatio = windowWidth / windowHeight;
+            var gameRatio = game.config.width / game.config.height;
+
+            if (windowRatio < gameRatio) {
+                canvas.style.width = windowWidth + "px";
+                canvas.style.height = (windowWidth / gameRatio) + "px";
+            } else {
+                canvas.style.width = (windowHeight * gameRatio) + "px";
+                canvas.style.height = windowHeight + "px";
+            }
+        }
+
+        window.addEventListener("resize", resizeGame);
+    </script>
+</body>
+</html>
