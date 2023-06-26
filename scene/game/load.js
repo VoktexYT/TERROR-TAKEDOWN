@@ -34,12 +34,9 @@ class Load_Game extends Phaser.Scene {
             this.load.spritesheet(MONSTERS[key]["key"], MONSTERS[key]["sheet_src"], {frameWidth: MONSTERS[key]["frameSize"][0], frameHeight: MONSTERS[key]["frameSize"][1]});
             this.load.image(MONSTERS[key]["type"] + ":item_image", MONSTERS[key]["loot_src"]);
         }
+    }
 
-        // start new scene
-        let scene = this.scene;
-        this.load.on('complete', function () {
-            scene.start("start");
-            scene.stop("load:game");
-        });
+    create() {
+        this.scene.start("start");
     }
 }
